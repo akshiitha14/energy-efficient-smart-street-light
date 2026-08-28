@@ -1,0 +1,54 @@
+# energy-efficient-smart-street-light
+
+Energy-efficient hybrid smart street lighting system using solar and wind energy with Arduino Uno, LDR and IR sensors.
+
+## Overview
+
+This project implements an energy-efficient hybrid street lighting system using solar and wind energy.
+The system uses Arduino Uno, LDR and IR sensors to automatically control LED street lights based on ambient light and motion detection.
+The renewable energy generated is stored in a rechargeable battery for reliable off-grid operation.
+
+## Features
+
+- Solar and wind energy generation
+- Automatic street light control
+- LDR based light detection
+- IR based motion detection
+- Arduino Uno implementation
+- Rechargeable battery storage
+- Energy-efficient LED lighting
+- Off-grid operation
+
+## Tools Used
+
+- Arduino Uno
+- LDR Sensor
+- IR Sensor
+- Solar Panel
+- Wind Turbine
+- Relay Module
+- Rechargeable Battery
+- Voltage Regulator
+- Diode
+- LED Lights
+
+## Files
+
+- Block diagram
+- Hardware setup
+- Output results
+- Flow / system description
+
+## Applications
+
+- Smart city street lighting
+- Renewable energy systems
+- Rural and remote area lighting
+- Off-grid lighting
+- Energy-efficient public infrastructure
+
+## Output
+
+The system successfully controls the LED street lights based on LDR and IR sensor inputs.
+When the LDR detects the required light condition and the IR sensor detects an object, the LEDs are activated.
+The hybrid solar and wind energy system provides power while the rechargeable battery supports continuous operation.
