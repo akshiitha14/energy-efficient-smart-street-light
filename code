@@ -1,0 +1,48 @@
+// Define pins
+int LDRPin = A0;            // LDR connected to A0
+int IRPin = 2;              // IR sensor connected to D2
+int Relay1Pin = 7;          // Relay 1 for Power Source Selection
+int Relay2Pin = 8;          // Relay 2 for LED Control
+int LDRThreshold = 500;     // Threshold for darkness
+int LDRValue = 0;           // Variable to store LDR value
+
+void setup() {
+  pinMode(IRPin, INPUT);      // IR sensor as input
+  pinMode(Relay1Pin, OUTPUT); // Relay 1 as output
+  pinMode(Relay2Pin, OUTPUT); // Relay 2 as output
+  Serial.begin(9600);         // Start serial monitor
+} 
+
+void loop() {
+  // Read LDR value
+  LDRValue = analogRead(LDRPin);
+  Serial.print("\n\nLDR Value: ");-
+  Serial.println(LDRValue);
+
+
+
+  int irvalue= digitalRead(IRPin);
+  Serial.print("IR Status: ");
+  Serial.println(irvalue);
+
+
+  // Power Source Selection (Relay 1)
+  if (LDRValue >= LDRThreshold) {  // If it's bright
+     Serial.println("It's dark, using wind energy.");
+    digitalWrite(Relay1Pin, LOW);  // Connect wind turbine (Relay 1 NC active)
+  } else {
+    Serial.println("It's bright, using solar energy.");
+    digitalWrite(Relay1Pin, HIGH); // Connect solar panel (Relay 1 NO active) }
+  }
+  // LED Control (Relay 2)
+  if (LDRValue >= LDRThreshold && irvalue == 0) {
+    Serial.println("Motion detected: LED ON");
+    digitalWrite(Relay2Pin, LOW); // Turn on LED (Relay 2 NO active)
+  } 
+  else {
+    Serial.println("Conditions not met: LED OFF");
+    digitalWrite(Relay2Pin,HIGH);  // Turn off LED (Relay 2 NC active)
+  }
+
+  delay(2000); // Small delay for stability
+}
