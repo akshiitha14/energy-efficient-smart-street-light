@@ -1,0 +1,34 @@
+The output demonstrates the operation of the **Energy-Efficient Smart Street Light Control System** using Arduino Uno, LDR and IR sensors with a hybrid solar and wind power supply.
+
+### Signal / Component Description
+
+* `Arduino Uno` : Main controller that processes the sensor inputs and controls the street lights.
+* `LDR Sensor` : Detects the surrounding ambient light level and determines the day/night condition.
+* `IR Sensor` : Detects the presence or movement of people or vehicles.
+* `Solar Panel` : Generates electrical energy from sunlight.
+* `Wind Turbine` : Generates electrical energy from wind.
+* `Relay Module 1` : Controls the connection between the renewable energy sources and the charging system.
+* `Relay Module 2` : Controls the LED street light based on sensor conditions.
+* `Rechargeable Battery` : Stores the generated energy and supplies power to the LED lights.
+* `LED Lights` : Provide street illumination when the required conditions are satisfied.
+
+### Working
+
+The system receives input from the LDR and IR sensors through the Arduino Uno. The LDR determines whether the surrounding environment is sufficiently dark, while the IR sensor detects the presence of an object.
+
+The renewable energy sources, consisting of a solar panel and wind turbine, provide power to the system. Their output passes through a diode and voltage regulator before being stored in the rechargeable battery.
+
+When the required light condition is detected by the LDR and the IR sensor detects an object, the Arduino activates Relay Module 2, causing the LED street lights to glow.
+
+When there is no required movement or the lighting condition does not require illumination, the LEDs remain OFF, thereby reducing unnecessary energy consumption.
+
+The output therefore demonstrates:
+
+* Detection of ambient light using the LDR
+* Detection of movement using the IR sensor
+* Automatic LED street-light control
+* Renewable energy-based power supply
+* Battery-based energy storage
+* Reduced energy consumption through automatic operation
+
+The document specifically shows a case where the LDR value is above the threshold and the IR sensor detects an object, resulting in the LEDs (street lights) glowing. 
